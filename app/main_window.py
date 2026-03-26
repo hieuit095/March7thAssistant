@@ -16,6 +16,29 @@ from .setting_interface import SettingInterface
 from .log_interface import LogInterface
 from .common.signal_bus import signalBus
 
+#: Post-action constants for shutdown menu
+POST_ACTION_EXIT = "Exit"
+POST_ACTION_LOOP = "Loop"
+POST_ACTION_SHUTDOWN = "Shutdown"
+POST_ACTION_SLEEP = "Sleep"
+POST_ACTION_HIBERNATE = "Hibernate"
+POST_ACTION_RESTART = "Restart"
+POST_ACTION_LOGOFF = "Logoff"
+POST_ACTION_TURN_OFF_DISPLAY = "TurnOffDisplay"
+POST_ACTION_RUN_SCRIPT = "RunScript"
+
+POST_ACTION_LABELS = {
+    POST_ACTION_EXIT: lambda: _("退出"),
+    POST_ACTION_LOOP: lambda: _("循环"),
+    POST_ACTION_SHUTDOWN: lambda: _("关机"),
+    POST_ACTION_SLEEP: lambda: _("睡眠"),
+    POST_ACTION_HIBERNATE: lambda: _("休眠"),
+    POST_ACTION_RESTART: lambda: _("重启"),
+    POST_ACTION_LOGOFF: lambda: _("注销"),
+    POST_ACTION_TURN_OFF_DISPLAY: lambda: _("关闭显示器"),
+    POST_ACTION_RUN_SCRIPT: lambda: _("运行脚本"),
+}
+
 from .card.messagebox_custom import MessageBoxSupport
 from .tools.check_update import checkUpdate
 from .tools.check_theme_change import checkThemeChange
@@ -25,7 +48,7 @@ from .tools.disclaimer import disclaimer
 from module.config import cfg
 from module.logger import log
 from module.game import get_game_controller
-from module.localization import tr
+from module.localization import tr, _
 import base64
 import os
 import sys
